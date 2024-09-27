@@ -7,8 +7,8 @@ class UserController:
         self.view = UserView(page)
 
     def login(self, e):
-        username = self.view.page.ref.username.value
-        password = self.view.page.ref.password.value
+        username = self.view.username.value
+        password = self.view.password.value
         user = self.db.find_user(username)
 
         if user and user[2] == password:  # Assume que a senha está na terceira coluna
@@ -17,8 +17,8 @@ class UserController:
             self.view.show_message("Usuário ou senha incorretos.")
 
     def register(self, e):
-        username = self.view.page.ref.username.value
-        password = self.view.page.ref.password.value
+        username = self.view.username.value
+        password = self.view.password.value
 
         if self.db.find_user(username):
             self.view.show_message("Usuário já existe.")
