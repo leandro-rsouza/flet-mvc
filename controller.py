@@ -27,4 +27,4 @@ class UserController:
             self.view.show_message("Usuário registrado com sucesso.")
 
     def start(self):
-        self.view.show_login(self.login)
+        self.view.show_login(self.login) # É aqui que o erro: Somente apresenta a inserção de dados para login -> show_login(self.login)
